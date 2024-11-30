@@ -19,11 +19,8 @@ def secure_endpoint(token: str = Depends(oauth2_scheme)):
 @app.post("/signout")
 def logout(token: str = Depends(oauth2_scheme)):
     payload = decode_token(token)
-    print(payload)
     if is_token_revoked(payload):
-        print("token already revoked")
         raise HTTPException(status_code=401, detail="Token revoked")
-    print("token not revoked")
     create_new_token_blacklist(payload)
     return {"message": "Token revoked successfully"}
 
