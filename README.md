@@ -21,6 +21,7 @@
 
 -  [About](#about)
 -  [Getting Started](#getting_started)
+-  [CURL Commands](#curl-commands)
 -  [Built Using](#built_using)
 -  [Authors](#authors)
 
@@ -47,6 +48,10 @@ These instructions will get you a copy of the project up and running on your loc
 pip install -r requirements.txt
 ```
 
+```
+Note: The default expiry time of token is 2 minutes. It can be changed in the .env.development file, in the /src/config directory
+```
+
 4. To run the server at port 8000 (default):
 
 ```
@@ -60,6 +65,51 @@ python -m uvicorn src.main:app --reload
 ```
 http://localhost:8000/docs
 ```
+
+## 🏁 CURL commands <a name = "curl_commands"></a>
+
+a) To check if API is up:
+
+curl --location --request GET 'http://localhost:8000/'
+
+b) To create a new Dummy User with a Dummy Password:
+
+curl --location --request POST 'http://localhost:8000/signup' \
+ --header 'Content-Type: application/json' \
+ --data '{
+"username": "dummyUser",
+"password": "dummyPassword"
+}'
+
+c) To generate a new access token (sign in):
+
+curl --location --request POST 'http://localhost:8000/signin' \
+ --header 'Content-Type: application/json' \
+ --data '{
+"username": "dummyUser",
+"password": "dummyPassword"
+}'
+
+```
+Note: This will return a new access token in request body.
+This token will be valid for 2 minutes, after which the token will expire.
+Use this token for next set of CURL requests
+```
+
+d) To check if user is Authorized (access token is not expired):
+
+curl --location --request GET 'http://localhost:8000/authorization' \
+ --header 'Authorization: Bearer /////--- YOUR ACCESS TOKEN ---///'
+
+e) To revoke a token (logout):
+
+curl --location --request POST 'http://localhost:8000/signout' \
+ --header 'Authorization: Bearer /////--- YOUR ACCESS TOKEN ---///'
+
+e) To refresh access token (not expired, not revoked):
+
+curl --location --request POST 'http://localhost:8000/refresh-token' \
+ --header 'Authorization: Bearer /////--- YOUR ACCESS TOKEN ---///'
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 

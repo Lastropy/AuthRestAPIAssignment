@@ -2,42 +2,18 @@
 	"info": {
 		"_postman_id": "c10bb668-7a1a-4cae-bdf6-07b83f7fa98b",
 		"name": "[Shivam Shukla] Auth REST API Assignment",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40111045"
 	},
 	"item": [
 		{
 			"name": "0) Check if Auth API is Up",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2h1a2xhOTkiLCJleHAiOjE3MzI5NzIzNzB9.-JL2pDio_TSWuZ9_h32EN_LKYXa5wWaetwGeEti57DY",
-							"type": "string"
-						}
-					]
+					"type": "noauth"
 				},
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2h1a2xhNSIsImV4cCI6MTczMjk2NDQzNX0.Q9tKJKAi2KUtW4kjCx8LYgJ_GlkAV0R3Lg7ys1qg-3Y",
-							"type": "default"
-						}
-					],
-					"options": {
-						"raw": {
-							"language": "text"
-						}
-					}
-				},
 				"url": {
 					"raw": "http://localhost:8000/",
 					"protocol": "http",
@@ -59,7 +35,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"sshukla99\",\r\n    \"password\": \"hellohi123\"\r\n}",
+					"raw": "{\r\n    \"username\": \"dummyUser\",\r\n    \"password\": \"dummyPassword\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -87,7 +63,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"sshukla99\",\r\n    \"password\": \"hellohi123\"\r\n}",
+					"raw": "{\r\n    \"username\": \"dummyUser\",\r\n    \"password\": \"dummyPassword\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -110,37 +86,19 @@
 		},
 		{
 			"name": "3) Authorization of token",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2h1a2xhOTkiLCJleHAiOjE3MzI5NzI4MTN9.NRL4ChQAa4Y5FfpyTcpyCPhuKanSIWxAKrA5DAlTpGA",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkdW1teVVzZXIiLCJleHAiOjE3MzI5NzU5MzF9.RW9vpgQ1j838kWyeNIcsJMc82hP5rU6jK-E_caaOutI",
 							"type": "string"
 						}
 					]
 				},
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2h1a2xhNSIsImV4cCI6MTczMjk2NDQzNX0.Q9tKJKAi2KUtW4kjCx8LYgJ_GlkAV0R3Lg7ys1qg-3Y",
-							"type": "default"
-						}
-					],
-					"options": {
-						"raw": {
-							"language": "text"
-						}
-					}
-				},
 				"url": {
 					"raw": "http://localhost:8000/authorization",
 					"protocol": "http",
@@ -163,22 +121,13 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2h1a2xhOTkiLCJleHAiOjE3MzI5NzI4MTN9.NRL4ChQAa4Y5FfpyTcpyCPhuKanSIWxAKrA5DAlTpGA",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkdW1teVVzZXIiLCJleHAiOjE3MzI5NzYxNjF9.sXCeiXItgiGWv0n0DEZGMl4psYa7rfhwtAlkypj7EdI",
 							"type": "string"
 						}
 					]
 				},
 				"method": "POST",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"sshukla99\",\r\n    \"password\": \"hellohi123\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
 					"raw": "http://localhost:8000/signout",
 					"protocol": "http",
@@ -201,22 +150,13 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzc2h1a2xhOTkiLCJleHAiOjE3MzI5NzMwNzJ9.rVv0bXh1DdSyvZYAGmaL_d7sMWuIJEyXyprZVwMxJZo",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkdW1teVVzZXIiLCJleHAiOjE3MzI5NzYyODV9.0c8oOgBL8Je08jLgD8pV7hsf51l16HuMlGivlE-uCno",
 							"type": "string"
 						}
 					]
 				},
 				"method": "POST",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"sshukla99\",\r\n    \"password\": \"hellohi123\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
 					"raw": "http://localhost:8000/refresh-token",
 					"protocol": "http",
