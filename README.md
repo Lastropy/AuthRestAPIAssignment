@@ -21,13 +21,8 @@
 
 -  [About](#about)
 -  [Getting Started](#getting_started)
--  [Deployment](#deployment)
--  [Usage](#usage)
 -  [Built Using](#built_using)
--  [TODO](../TODO.md)
--  [Contributing](../CONTRIBUTING.md)
 -  [Authors](#authors)
--  [Acknowledgments](#acknowledgement)
 
 ## 🧐 About <a name = "about"></a>
 
@@ -75,9 +70,3 @@ http://localhost:8000/docs
 ## ✍️ Authors <a name = "authors"></a>
 
 -  [Shivam Shukla](https://github.com/lastropy) - Design and Implementation
-
-## 🎉 Acknowledgements <a name = "acknowledgement"></a>
-
--  Hat tip to anyone whose code was used
--  Inspiration
--  References
