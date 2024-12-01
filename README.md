@@ -21,7 +21,7 @@
 
 -  [About](#about)
 -  [Getting Started](#getting_started)
--  [CURL Commands](#curl-commands)
+-  [CURL Commands](#curl_commands)
 -  [Built Using](#built_using)
 -  [Authors](#authors)
 
